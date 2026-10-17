@@ -4,13 +4,24 @@
 
 This is your new React Native Reproducer project.
 
+## iOS: TextInput loses its custom font face after an autocorrect
+
+A multiline `TextInput` with `fontFamily: 'PlusJakartaSans-Bold'` (bundled in `ReproducerApp/ios/ReproducerApp/Fonts`,
+SIL OFL) draws the words typed after an iOS autocorrect in `PlusJakartaSans-Regular`.
+
+1. `cd ReproducerApp && yarn && cd ios && bundle install && bundle exec pod install && cd .. && yarn ios`
+2. Tap the field and type, without pausing: `Anyone up for pickup basketball at the park this saturday morning`
+3. iOS autocorrects "saturday" to "Saturday"; "morning" is drawn in the regular face.
+
+![After the autocorrect](media/after-autocorrect.png)
+
 # Reproducer TODO list
 
 - [x] 1. Create a new reproducer project.
-- [ ] 2. Git clone your repository locally.
-- [ ] 3. Edit the project to reproduce the failure you're seeing.
-- [ ] 4. Push your changes, so that Github Actions can run the CI.
-- [ ] 5. Make sure the repository is public and share the link with the issue you reported.
+- [x] 2. Git clone your repository locally.
+- [x] 3. Edit the project to reproduce the failure you're seeing.
+- [x] 4. Push your changes, so that Github Actions can run the CI.
+- [x] 5. Make sure the repository is public and share the link with the issue you reported.
 
 # How to use this Reproducer
 
